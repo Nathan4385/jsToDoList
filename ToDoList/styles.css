@@ -1,0 +1,16 @@
+.body{
+    background-color: darkgray;
+    color: lightgray;
+}
+.tasklist{
+    color: black;
+}
+.buttonStyle1{
+    background-color: lightblue;
+    border-radius: 1000px;
+}
+
+.buttonStyle1:hover {
+    background-color: #007bff;
+    color: lightblue;
+  }
