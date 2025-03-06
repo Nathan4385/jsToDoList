@@ -1,4 +1,4 @@
-const input = document.getElementById("listItem");
+/*const input = document.getElementById("listItem");
 const button = document.getElementById("addItem");
 const taskList = document.getElementById("taskList");
 
@@ -45,3 +45,38 @@ button.addEventListener("click", () => {
         }
     });
 });
+
+
+*/
+
+const input = document.getElementById("listItem");
+const button = document.getElementById("addItem");
+const taskList = document.getElementById("taskList");
+
+button.onclick = () => {
+    let task = input.value;
+    if (!task) return;
+
+    let li = document.createElement('li');
+    li.innerText = task;
+
+    let removeButton = document.createElement('button');
+    removeButton.innerText = 'Remove';
+    li.appendChild(removeButton);
+
+    let editButton = document.createElement('button');
+    editButton.innerText = 'Edit';
+    li.appendChild(editButton);
+
+    taskList.appendChild(li);
+
+    removeButton.onclick = () => li.remove();
+    editButton.onclick = () => {
+        let newTask = prompt("Edit your task:", task);
+        if (newTask) li.innerText = newTask;
+        li.appendChild(removeButton);
+        li.appendChild(editButton);
+    };
+
+    input.value = "";
+};
